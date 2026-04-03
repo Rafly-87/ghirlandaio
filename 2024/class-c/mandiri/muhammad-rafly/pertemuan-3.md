@@ -20,4 +20,4 @@ Teknologi yang merupakan subuah inovasi dan kemuajuan dapat dianggap sebagai mit
 
 ---
 ## Sumber 
-[^1]: Baudrillard, J. (1981). *Simulacra and Simulation: Translated by Sheila Faria Glaser* Michigan.
+[^1]: Baudrillard, J. (1981). *Simulacra and Simulation: Translated by Sheila Faria Glaser*. Michigan.
