@@ -285,14 +285,9 @@ pada tim yang menang, nilai uts dan formatif akan disamakan pada nilai uas
 
 ---
 
-<img src="2024/bagan_uas.png"  width="300" height="200">
- 
-
-img {
-  width: 100%; /* Scales to container width */
-  max-width: 500px; /* Limits maximum size */
-  height: auto; /* Maintains aspect ratio */
-}
+<p align="center">
+  <img src="bagan_uas.png" width="100%">
+</p>
 
 ---
 
