@@ -25,9 +25,9 @@ antara rufus atau balena etcher , saya akan memilih menggunakan balenaetcher kar
 seperti di contoh masukan sama ISO dan flashdisk kalian ke dalam agar isi flashdisk kalian akan di tulis ulang untuk masuk boot bootloader environment dari linux 
 reboot kemudian tekan f12 berulang kali untuk masuk ke live environment boot, jangan lupa untuk mematikan security boot sebelum instalasi linux karena boot live inevrionment tidak akan berkerja jika security pada bootloader masih aktif, kemudian exit 
 
-## setelahnya masuk pada Archinstall untuk instalasi linux 
+## setelahnya masuk pada boot environmet untuk instalasi linux 
 
-###### connect to internet  <br> 
+#### connect to internet  <br> 
 > [1]  ketik ip link untuk melihat apakah status dari internet contoh : __wlan0__ itu aktif atau tidak / up or down <br> 
 > [2] ketik __iwctl__ untuk masuk ke dalam iwd <br> 
 > [3] ketik __device list__ untuk menunjukan device akan menunjukan contoh : wlan0 <br> 
@@ -41,7 +41,7 @@ reboot kemudian tekan f12 berulang kali untuk masuk ke live environment boot, ja
 > ketik __fdisk -l__ untuk mengetahui isi dari partisi dan bentuk juga type atau jenis formatnya <br>
 > ketik __lsblk__ untuk melihat partisi mana yang sudah di mount dan mana yang belum <br>
 
-###### contoh idealnya dan penjelasannya 
+#### __contoh idealnya dan penjelasannya__
 nvmeon1 / sda 1 adalah partisi yang akan kalian edit nantinya contoh bentuk lainnya adalah /dev/sda, /dev/nvme0n1 or /dev/mmcblk0
 
 contoh : 
@@ -51,6 +51,7 @@ contoh :
 |/dev/ nvme0n1p1|mkfs.vfat| /mnt/boot|5/ 2 G |
 | /dev/ nvme0n1p2|mkfs.ext4| / |50 /20 G| 
 
+<br> 
 contoh milik saya adalah : 
 
 |Partisi | bentuk format| mount| besaran | alasan | 
@@ -73,7 +74,7 @@ user atau anda juga dapat menentukan file swap fungsinya apa ?, itu optional di 
 
 ##### membuat format untuk partisi [ mkfs, mkdir , mount , umount ] 
 
->mkfs. <br> 
+mkfs. <br> 
 >untuk boot : mkfs.fat -F32 /dev/nama_partisi_untuk _efi /mnt/boot <br> 
 
 >untuk root : mkfs.ext4 /dev/nama_partisi_untuk_root /mnt <br> 
@@ -81,6 +82,31 @@ user atau anda juga dapat menentukan file swap fungsinya apa ?, itu optional di 
 >untuk home : mkfs.ext4 /dev/nama_partisi_untuk_home /mnt/home
 
 [!info] mengapa harus FAT -F32 ? , karena linux harus menggunakan -F32 , mengapa menggunakan ext4 ? , karena ini yang lebih modern dan stabil dalam format sistemnya
+
+mount sekaligus mkdir <br> 
+
+> mount --mkdir /dev/nama_partisi_EFI /mnt/boot <br> 
+> mount --mkdir /dev/nama_partisi_home /mnt/home <br>
+
+otomatis __membuat direktori dengan mkdir__ dan __mount point__ pada partisi yang ingin di mount pada __/mnt/boot__ dan __/mnt/home__
+
+### pacstrap /mnt 
+
+>di gunakan untuk menclone atau mengambil packages penting dari mirror repo archlinux <br> 
+>dengan cara __Pacstrap -K /mnt__ <br>
+>gunakan amd-ucode untuk AMD <br> 
+>gunakan intel-ucode untuk INTEL <br>
+>Pacstrap -K /mnt base base-devel linux linux-firmware git neovim iwd <br>
+
+base dan linux-firmware itu penting untuk menjalankan linu,x base adalah dasar atau inti dari repo linux sebagai dasar dasar dari sistem linux dan linux-firmware = firmware untuk linux 
+neovim adalah teks editor untuk linux dan iwd adalah sistem network untuk linux 
+
+
+
+
+
+
+
 
 
 
