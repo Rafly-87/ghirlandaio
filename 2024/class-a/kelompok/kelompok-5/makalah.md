@@ -22,6 +22,7 @@ Namun, proses instalasi Arch Linux memerlukan pemahaman mengenai perintah termin
 
 
 ## Pembahasan
+.
 ### 1. Persiapan sebelum instalasi
 
 
@@ -32,6 +33,30 @@ Namun, proses instalasi Arch Linux memerlukan pemahaman mengenai perintah termin
 
 
 ### 4. Reboot
+
+## Praktik
+
+1. Persiapan Sebelum Instalasi
+a. Dapaktkan file ISO Arch Linux berikut link "archlinux.org/download/" pastikan sudah ada signature
+b. partisi disk menggunakan mini partition wizard
+c. siapkan flashdisk minimal 8gb
+
+2. Masukan ISO ke flashdisk
+3. boot ke live environment
+4. pastikan masuk ke boot installer UEFI bukan BIOS
+5. Konek ke Internet
+6. Sinkronisasi waktu
+7. Partisi Disk
+8. Mount filesystem
+9. Instalasi sistem dasar
+10. Membuat Fstab
+11. masuk ke sistem boot
+12. mengatur timezone
+13. localization
+14. generate Initframs
+15. password
+16. install bootloader GRUB2
+17. Reboot
 
 
 ## Penutup
