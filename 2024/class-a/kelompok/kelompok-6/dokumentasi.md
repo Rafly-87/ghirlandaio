@@ -6,13 +6,28 @@ Install NetworkManager
 sudo pacman -S networkmanager
 
 ```
-Setelah semua selesai kita akan melakukan start untuk NetworkManager
+Setelah semua selesai kita akan melakukan akrifkan dan start untuk NetworkManager
 
 ```
 
-systemctl anable neworkmanager.service
+sudo enable NetworkManager
 
 ```
+
+```
+
+sudo systemctl start NetworkManager  
+
+```
+
+Setelah itu Cek Status 
+
+```
+
+systemctl status NetworkManager  
+
+```
+
 Tampilan NetworkManager
 
 <img width="4032" height="3024" alt="hasil - tampilan networkmanager" src="https://github.com/user-attachments/assets/89fc32c8-99fb-4382-82c8-f820cdb4fb55" />
