@@ -14,6 +14,9 @@ tekan FN + F12
 ## 4. Sambungkan ke internet
 gunakan ```iwctl```
 
+<img width="1600" height="900" alt="WhatsApp Image 2026-05-20 at 01 14 18" src="https://github.com/user-attachments/assets/91cdfef6-e15d-43a3-9300-e8bffa84a0dc" />
+
+
 ```station wlan0 scan```
 
 ```station wlan0 get-networks```
@@ -35,6 +38,8 @@ masuk ke cfdisk
 ## 7. Membagi Partisi
 Pilih Free Space
 
+<img width="1600" height="901" alt="WhatsApp Image 2026-05-20 at 00 54 32" src="https://github.com/user-attachments/assets/edf9a39c-371c-4745-8905-bef470d9e60b" />
+
 Lalu bagi partisi sesuai pengkondisian penyimpanan yang sudah dibagi, kelompok kami memakai
 
 1 GB untuk boot, type EFI system
@@ -47,6 +52,9 @@ Lalu bagi partisi sesuai pengkondisian penyimpanan yang sudah dibagi, kelompok k
 ```lsblk```
 
 contoh hasilnya 
+
+<img width="1600" height="900" alt="WhatsApp Image 2026-05-20 at 01 20 41" src="https://github.com/user-attachments/assets/4cedffd5-60b1-44dd-86d3-a1760ae41922" />
+
 
 /dev/nvme0n1p5 untuk boot
 
@@ -78,9 +86,25 @@ mount root ```mount /dev/nvme0n1p7 /mnt```
 
 membuat folder boot ```mkdir -p /mnt/boot```
 
-mount boot ```mount /dev/nvme0n1p5 /mnt/boot
+mount boot ```mount /dev/nvme0n1p5 /mnt/boot```
 
 ## 10. Install base system
-install package dasararch linux ```pacstrap -K /mnt base-devel linux linux-firmwarenvim amd-ucode (jika intel maka menjadi intel-ucode)```
+install package dasar arch linux ```pacstrap -K /mnt base-devel linux linux-firmwarenvim amd-ucode (jika intel maka menjadi intel-ucode)```
+
+## 11. Generate fstab 
+fstab digunakan untuk menyimpan konfigurasi mount partisi 
+
+```genfstab -U /mnt >> /mnt/etc/fstab```
+
+## 12. Masuk ke  sistem arch
+```arch-chroot /mnt```
+
+## 13. Mengatur timezone
+contoh mengatur sesuai timezone Indonesia
+
+```In -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime```
+
+lalu sinkronkan dengan hardware clock ```hwclock --systoch```
+
 
 
