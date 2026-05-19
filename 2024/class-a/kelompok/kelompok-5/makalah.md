@@ -238,7 +238,7 @@ Cara  keluar dari croot, ketik ```exit```, setelah itu melepas semua partisi yan
 
 Instalasi base Arch Linux adalah proses awal untuk membuat sistem operasi Linux agar dapat digunakan. Proses ini dilakukan mulai dari mengatur partisi, menghubungkan internet, hingga menginstal paket dasar sistem.
 
-Meskipun proses instalasinya dilakukan secara manual, pengguna dapat lebih memahami cara kerja Linux dan pengelolaan sistem komputer. Setelah instalasi selesai, Arch Linux dapat dikembangkan kembali sesuai kebutuhan pengguna dengan menambahkan desktop environment, driver, dan aplikasi lainnya.
+Meskipun proses instalasinya dilakukan secara manual, pengguna dapat lebih memahami cara kerja Linux dan pengelolaan sistem komputer. Setelah instalasi selesai, Arch Linux dapat dikembangkan kembali sesuai kebutuhan pengguna.
 
 ## Daftar Pustaka
 
