@@ -118,7 +118,7 @@
 - Untuk membuat user ketik:
 <img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 57 30" src="https://github.com/user-attachments/assets/3736b2c9-87fd-4440-abf1-549c9bb6203b" />
 
- - Selanjutnya ketik **echo '(nama user yang dipilih) ALL=(ALL:ALL) ALL' >> /etc/sudoers.d/none**. Dianjutkan dengan mengetik **pacman -S grub efibootmgr os-prober**, enter kemudian ketik huruf **y**
+ - Selanjutnya ketik **echo '(nama user yang dipilih) ALL=(ALL:ALL) ALL' >> /etc/sudoers.d/none**. Dianjutkan dengan mengetik **pacman -S grub efibootmgr os-prober**, enter kemudian ketik huruf **'y'**
 <img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 01 17" src="https://github.com/user-attachments/assets/dd3cdaf6-f2f4-4cfb-bf4f-e70186745f52" />
 <img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 01 18" src="https://github.com/user-attachments/assets/2df7ab84-4cae-455a-bcbb-f0a11810fd71" />
 
