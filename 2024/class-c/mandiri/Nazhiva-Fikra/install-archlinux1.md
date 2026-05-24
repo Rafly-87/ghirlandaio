@@ -87,4 +87,52 @@
 - Ketik **lsblk -o name,fstype,size** untuk mengecek lagi partisi Linux (sdb5, sdb6, dan sdb7 merupakan partisi milik Linux)
 <img width="1200" height="1600" alt="WhatsApp Image 2026-05-24 at 12 21 33" src="https://github.com/user-attachments/assets/96e54cd7-10f3-4d86-bac9-399180d95d07" />
 
-### 
+### Mount Filesystem
+- Ketik **mount /dev/sdb7 /mnt** (untuk root)
+- Lalu ketik **mount --mkdir /dev/sdb5 /mnt/boot** (untuk boot)
+- Lalu ketik **lsblk** untuk mengecek
+<img width="1200" height="1600" alt="WhatsApp Image 2026-05-24 at 12 29 27" src="https://github.com/user-attachments/assets/459261df-1772-4bda-a7e7-a5c11ad330c5" />
+
+- Untuk menginstall sistem dasar ketik **pacstrap -K /mnt base linux linux-firmware base-devel neovim git networkmanager**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 34 02" src="https://github.com/user-attachments/assets/bf5e733e-772f-4246-8236-5fa132889e9e" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 34 03" src="https://github.com/user-attachments/assets/d7b18766-8554-447b-86cb-fb094dc2f831" />
+
+- Untuk membuat fstab ketik **genfstab -U /mnt > /mnt/etc/fstab**, enter, lalu ketik lagi **arch-chroot /mnt**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 41 50" src="https://github.com/user-attachments/assets/50e2a879-b5d6-4bb8-923e-ab5e7f1ce21e" />
+
+- Untuk mengatur timezone ketik **ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime**, enter, lalu ketik lagi **hwclock --systohc**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 47 12" src="https://github.com/user-attachments/assets/5d9b1de9-b597-4fd2-82af-9a71f59ac836" />
+
+- Selanjutnya ketik **locale-gen**, enter, kemudian ketik **nvim /etc/locale.conf**, enter dan ketik 'i' pada keyboard dan akan muncul tampilan seperti ini
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 50 43" src="https://github.com/user-attachments/assets/2b2e433b-88bf-48c1-bc5f-240bde735e50" />
+
+- Ketik:
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 52 53" src="https://github.com/user-attachments/assets/8067d5f6-796a-43c8-81ed-103a93c07dbf" />
+
+- Lalu ketik:
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 52 53 (1)" src="https://github.com/user-attachments/assets/29e603ea-8ad0-4638-a1ae-3d704f44a5f3" />
+
+- Untuk membuat hostname ketik:
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 56 07" src="https://github.com/user-attachments/assets/83559deb-6bcc-427c-a026-b827529c4f6e" />
+
+- Untuk membuat user ketik:
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 12 57 30" src="https://github.com/user-attachments/assets/3736b2c9-87fd-4440-abf1-549c9bb6203b" />
+
+ - Selanjutnya ketik **echo '(nama user yang dipilih) ALL=(ALL:ALL) ALL' >> /etc/sudoers.d/none**. Dianjutkan dengan mengetik **pacman -S grub efibootmgr os-prober**, enter kemudian ketik huruf **y**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 01 17" src="https://github.com/user-attachments/assets/dd3cdaf6-f2f4-4cfb-bf4f-e70186745f52" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 01 18" src="https://github.com/user-attachments/assets/2df7ab84-4cae-455a-bcbb-f0a11810fd71" />
+
+- Selanjutnya ketik **grub-install --target=86_64-efi --efi-directory=/BOOT --bootloader-id=GRUB**. Kemudian ketik **nvim /etc/default/grub**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 05 20" src="https://github.com/user-attachments/assets/9abe74aa-adba-4ff6-a22f-91760b1d3c6b" />
+
+- Hapus '#' sehingga menjadi (GRUB_DISABLE_OS_PROBER=false), enter lalu ketik **:wq** 
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 07 53" src="https://github.com/user-attachments/assets/d8c2d892-ca6b-4974-90a0-f3e40d2c8a11" />
+
+- Kemudian ketik:
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 10 19" src="https://github.com/user-attachments/assets/08dbda83-5b12-4248-ab3c-34fbbbbdce57" />
+
+- Lalu ketik **exit**. Dilanjutkan dengan mengetik **umount -R /mnt**. Lalu ketik **reboot** dan enter
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 13 13 02" src="https://github.com/user-attachments/assets/5b1d8df3-9314-4761-a819-b531f9742249" />
+
+### Proses Instalasi KDE Plasma
+- 
