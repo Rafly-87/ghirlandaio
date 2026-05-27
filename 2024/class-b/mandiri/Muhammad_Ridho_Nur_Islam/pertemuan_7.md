@@ -1,4 +1,4 @@
-<img src="2024/class-b/mandiri/Muhammad_Ridho_Nur_Islam/img/langkah1.jpg" width="500" height="600">.
+<img src="2024/class-b/mandiri/Muhammad_Ridho_Nur_Islam/img/langkah1.png" width="500" height="600">.
 <img src="url" width="500" height="600">.
 <img src="url" width="500" height="600">.
 <img src="url" width="500" height="600">.
