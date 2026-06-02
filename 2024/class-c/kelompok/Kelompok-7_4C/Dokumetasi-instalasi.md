@@ -141,13 +141,13 @@ Mounting partisi grup logical volume.
 mount --mkdir -o rw,nodev,nosuid,relatime /dev/(nama grup)/vars /mnt/var
 ```
 ```
-mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/(nama grup)/vtmp /mnt/var/tmp
-```
-```
-mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/(nama grup)/vlog /mnt/var/log
+mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/(nama grup)/vlog /mnt/var/vlog
 ```
 ```
 mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/(nama grup)/vaud /mnt/var/log/audit
+```
+```
+mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/(nama grup)/vtmp /mnt/var/tmp
 ```
 ```
 mount --mkdir -o rw,nodev,nosuid,relatime /dev/(nama grup)/home /mnt/home
