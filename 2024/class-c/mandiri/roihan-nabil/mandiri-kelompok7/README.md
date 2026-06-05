@@ -1,4 +1,5 @@
-software : ngerun software
-install : dari awal instalasi
+software-roihan : ngerun software
+
+install-roihan : dari awal instalasi
 
 ---
