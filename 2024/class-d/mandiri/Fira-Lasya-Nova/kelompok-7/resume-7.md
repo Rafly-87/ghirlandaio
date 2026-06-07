@@ -26,6 +26,6 @@ Tools untuk mengakses server dari jarak jauh secara aman menggunakan koneksi ter
 ## Booster
 Pembuat initramfs yang membantu kernel menyiapkan driver dan konfigurasi saat proses booting, termasuk dukungan partisi terenkripsi LUKS
 ## MPD, MPV, dan MPC
-MPD: Layanan pemutar musik yang berjalan di background.
-MPC: Client untuk mengontrol MPD melalui terminal.
-MPV: Media player untuk memutar musik dan video.
+- MPD: Layanan pemutar musik yang berjalan di background
+- MPC: Client untuk mengontrol MPD melalui terminal
+- MPV: Media player untuk memutar musik dan video.
