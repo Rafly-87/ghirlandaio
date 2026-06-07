@@ -25,3 +25,6 @@ pada bagian **View the recording at:**
 masukkan link tersebut pada browser (pastikan kamu sudah membuat akun di asciinema.org)
 <img src="/2024/tutor/img/asciinema2.jpg" width="500" height="600">
 setelah masuk kamu bisa mendownload dengan format .cast, .txt, dan .gif
+
+### video praktek
+video prakteknya bisa di lihat di https://youtu.be/SQEJOKTPppw

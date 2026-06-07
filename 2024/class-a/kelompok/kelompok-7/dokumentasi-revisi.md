@@ -1,121 +1,87 @@
-# Instalasi Arch Linux dengan Disk Layout CIS
+# install arch cis disk layout
 
-Setup: LUKS on LVM, systemd-boot + booster, XFCE desktop
-
----
-
-## Spesifikasi
-
-| Komponen | Value |
-|----------|-------|
-| Boot | booster |
-| Disk Encryption | LUKS on LVM |
-| Desktop | XFCE |
-| File Manager | Superfile (spf) |
-| Disk Layout | CIS |
-| Container | Podman, Podman Desktop |
-| Firewall | IPTables |
-| Multimedia | MPD, MPC, MPV |
-| Password Manager | KeePassXC |
-| Key Manager | Secrets |
-| Remote Access | OpenSSH |
-
----
-
-## 1. Connect WiFi
-
+## 1. wifi dulu
 ```bash
 iwctl
 device list
-station wlan0 get-network
-station wlan0 scan
-station wlan0 connect "(nama wifi)"
+station (driver wifi) get-network
+station (driver wifi) scan
+station {device wifi} connect "{nama wifi}"
 exit
-ping 1.1.1.1 -c 4
+```
+cek dulu
+```bash
+ping 1.1.1.1
 ```
 
 ---
 
-## 2. Partisi
-
-Cek partisi yang ada:
-```bash
+## 2. partisi
+```
 lsblk -o name,fstype,size
 lsblk
 ```
-
-Buat partisi baru:
-```bash
-cfdisk /dev/(nama disk)
-# contoh: cfdisk /dev/nvme0n1
 ```
-
-Layout yang dibuat (sesuaikan dengan disk masing-masing):
-- `(partisi boot)` = 2G → EFI System (boot)
-- `(partisi lvm)` = sisa → Linux filesystem (LVM)
-
-```bash
+cfdisk /dev/[nama disk]
+```
+#### MENYESUAIKAN DENGAN PENYIMPANAN YANG ADA
+```
+boot = 1G → EFI system
+root = sisanya → linux filesystem
+```
+#### kalo partisi PENTING ke hapus, langsung QUIT jangan di WRITE
+```
 lsblk
 ```
 
 ---
 
-## 3. Setup LVM
-
-> Ganti `(partisi lvm)` dengan partisi yang dibuat tadi, contoh: `/dev/nvme0n1p6`
-
-```bash
-pvcreate /dev/(partisi lvm)
-vgcreate proc /dev/(partisi lvm)
-lvcreate -L 20G proc -n root
-lvcreate -L 10G proc -n vars
-lvcreate -L 4G proc -n vtmp
-lvcreate -L 4G proc -n vlog
-lvcreate -L 2G proc -n vaud
-lvcreate -L 10G proc -n home
-lvcreate -l 50%FREE proc -n crab
+## 3. lvm
+```
+pvcreate /dev/[partisi root]
+vgcreate proc /dev/[partisi root]
+lvcreate -L [size]G proc -n root
+lvcreate -L [size]G proc -n vars
+lvcreate -L [size]G proc -n vtmp
+lvcreate -L [size]G proc -n vlog
+lvcreate -L [size]G proc -n vaud
+lvcreate -L [size]G proc -n home
+lvcreate -l50%FREE proc -n [name]
 lsblk
 ```
 
 ---
 
-## 4. Formatting
-
-```bash
+## 4. format
+```
 mkfs.ext4 /dev/proc/root
-mkfs.vfat -F32 -n BOOT /dev/(partisi boot)
+mkfs.vfat -F32 -n BOOT /dev/[partisi boot]
 mkfs.ext4 /dev/proc/vars
 mkfs.ext4 /dev/proc/vtmp
 mkfs.ext4 /dev/proc/vlog
 mkfs.ext4 /dev/proc/vaud
 mkfs.ext4 /dev/proc/home
-mkfs.ext4 /dev/proc/crab
+mkfs.ext4 /dev/proc/[name]
 ```
 
 ---
 
-## 5. Setup LUKS
-
-Volume `crab` di-encrypt pakai LUKS, nantinya di-mount ke `/home/(username)` saat login.
-
-> Nama device LUKS pakai username kalian, contoh: `dika`
-
-```bash
-cryptsetup luksFormat /dev/proc/crab
-# ketik YES lalu masukkan passphrase (ingat passphrase ini, harus sama dengan password user nanti)
-cryptsetup luksOpen /dev/proc/crab (username)
-mkfs.ext4 /dev/mapper/(username)
+## 5. luks
+```
+cryptsetup luksFormat /dev/proc/[name]
+```
+ketik YES lalu masukin passphrase → **harus sama dengan password user nanti**
+```
+cryptsetup luksOpen /dev/proc/[name] [nama device]
+mkfs.ext4 /dev/mapper/[nama device]
 ```
 
 ---
 
-## 6. Mounting
-
-> Ganti `(partisi boot)` dengan partisi EFI kalian
-
-```bash
+## 6. mounting
+```
 mount /dev/proc/root /mnt
-mount --mkdir -o uid=0,gid=0,dmask=0077,fmask=0077 /dev/(partisi boot) /mnt/boot
+mount --mkdir -o uid=0,gid=0,dmask=0077,fmask=0077 /dev/[partisi boot] /mnt/boot
 mount --mkdir -o rw,nodev,nosuid,relatime /dev/proc/vars /mnt/var
 mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/proc/vtmp /mnt/var/tmp
 mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/proc/vlog /mnt/var/log
@@ -126,124 +92,92 @@ lsblk
 
 ---
 
-## 7. Install Packages
-
-Intel:
-```bash
+## 7. pacstrap
+intel:
+```
 pacstrap /mnt intel-ucode linux-lts linux-lts-headers linux-firmware lvm2 base base-devel neovim openssh superfile podman podman-desktop iptables mpd mpc mpv keepassxc secrets booster networkmanager pam_mount
 ```
-
-AMD:
-```bash
+amd:
+```
 pacstrap /mnt amd-ucode linux-lts linux-lts-headers linux-firmware lvm2 base base-devel neovim openssh superfile podman podman-desktop iptables mpd mpc mpv keepassxc secrets booster networkmanager pam_mount
 ```
 
 ---
 
-## 8. Generate fstab
-
-```bash
+## 8. fstab
+```
 genfstab -U /mnt > /mnt/etc/fstab
-echo "/tmpfs /tmp tmpfs defaults,nosuid,nodev,noexec,size=1G 0 0" >> /mnt/etc/fstab
+echo "/tmpfs /tmp  tmpfs  defaults,nosuid,nodev,noexec,size=1G  0  0" >> /mnt/etc/fstab
 ```
 
 ---
 
-## 9. Chroot
-
-```bash
+## 9. chroot
+```
 arch-chroot /mnt
 ```
 
 ---
 
-## 10. Hostname
-
-> Ganti `(nama hostname)` sesuai keinginan
-
-```bash
-echo (nama hostname) > /etc/hostname
+## 10. hostname
+kalo 1 kata ga perlu tanda kutip
+```
+echo [nama komputer] > /etc/hostname
 ```
 
 ---
 
-## 11. Timezone
-
-```bash
+## 11. timezone
+```
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 hwclock --systohc
 ```
 
 ---
 
-## 12. Locale
-
-Edit `/etc/locale.gen`, uncomment `en_US.UTF-8 UTF-8`:
-
-```bash
+## 12. locale
+```
 nvim /etc/locale.gen
 ```
-
-Generate:
-```bash
+cari pake `/` di nvim, uncommenting `en_US.UTF-8 UTF-8`
+```
 locale-gen
 locale > /etc/locale.conf
-```
-
-Edit `/etc/locale.conf`:
-```bash
 nvim /etc/locale.conf
 ```
-
-Isi:
+ubah jadi:
 ```
 LANG=en_US.UTF-8
-LC_CTYPE="C.UTF-8"
-LC_NUMERIC="C.UTF-8"
-LC_TIME="C.UTF-8"
-LC_COLLATE="C.UTF-8"
-LC_MONETARY="C.UTF-8"
-LC_MESSAGES=
-LC_PAPER="C.UTF-8"
-LC_NAME="C.UTF-8"
-LC_ADDRESS="C.UTF-8"
-LC_TELEPHONE="C.UTF-8"
-LC_MEASUREMENT="C.UTF-8"
-LC_IDENTIFICATION="C.UTF-8"
 LC_ALL=en_US.UTF-8
 ```
+sisanya ganti `C` → `C.UTF-8`
 
 ---
 
-## 13. User & Sudo
-
-> Ganti `(username)` dengan username kalian
-
-```bash
+## 13. user & sudo
+```
 mkdir /home/user
-useradd -d /home/user (username)
-passwd (username)
-# masukkan password, harus sama dengan passphrase LUKS tadi
-chown -R (username):(username) /home/user
+useradd -d /home/user [username]
+passwd [username]
+```
+**password harus sama dengan passphrase luks tadi**
+```
+chown -R [username]:[username] /home/user
 passwd
-# set password root, boleh sama atau beda
-echo '(username) ALL=(ALL:ALL) ALL' >> /etc/sudoers.d/none
+```
+set password root, boleh sama boleh beda
+```
+echo '[username] ALL=(ALL:ALL) ALL' >> /etc/sudoers.d/none
+sudo mount -o rw,nodev,nosuid,relatime /dev/mapper/[nama device] /home/[username]
 ```
 
-> **Penting:** password user harus sama dengan passphrase LUKS supaya pam_mount bisa otomatis unlock `/home/(username)` saat login
-
 ---
 
-## 14. Konfigurasi pam_mount
-
-Edit `/etc/security/pam_mount.conf.xml`:
-
-```bash
+## 14. pam_mount
+```
 nvim /etc/security/pam_mount.conf.xml
 ```
-
-> Ganti `(username)` dengan username kalian
-
+samain sama ini:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE pam_mount SYSTEM "pam_mount.conf.xml.dtd">
@@ -257,29 +191,37 @@ nvim /etc/security/pam_mount.conf.xml
 <logout wait="0" hup="no" term="no" kill="no" />
 
 <volume
-    user="(username)"
+    user="[username]"
     fstype="crypt"
-    path="/dev/proc/crab"
-    mountpoint="/home/(username)"
+    path="/dev/proc/[name]"
+    mountpoint="/home/[username]"
 />
 
 <mkmountpoint enable="1" remove="true" />
 
 </pam_mount>
 ```
+bagian penting:
+```xml
+<volume
+    user="[username]"
+    fstype="crypt"
+    path="/dev/proc/[username]"
+    mountpoint="/home/[username]"
+/>
+```
 
-Edit `/etc/pam.d/system-login`:
-
-```bash
+```
 nvim /etc/pam.d/system-login
 ```
-
+samain sama ini:
 ```
 #%PAM-1.0
+
 auth       required   pam_shells.so
 auth       requisite  pam_nologin.so
 auth       include    system-auth
-auth       optional   pam_mount.so
+auth       required   pam_mount.so
 
 account    required   pam_access.so
 account    required   pam_nologin.so
@@ -298,17 +240,14 @@ session    optional   pam_mount.so
 -session   optional   pam_systemd.so
 session    required   pam_env.so
 ```
+biar sistem tau pake `pam_mount` waktu login
 
 ---
 
-## 15. Booster
-
-Edit `/etc/booster.yaml`:
-
-```bash
+## 15. booster
+```
 nvim /etc/booster.yaml
 ```
-
 ```yaml
 network:
   dhcp: on
@@ -318,33 +257,23 @@ extra_files: fsck,fsck.ext4
 strip: true
 enable_lvm: true
 ```
-
-Build initramfs:
-
-```bash
+```
 cd /boot
 ls /usr/lib/modules
-# catat versi kernel yang muncul, lalu ganti di command berikut
-booster build --kernel-version (versi kernel) /boot/booster-linux-lts-new.img
+```
+catat versi kernelnya
+```
+booster build --kernel-version [versi kernel] /boot/booster-linux-lts-new.img
 rm -fr booster-linux-lts.img
 ```
 
-> Contoh versi kernel: `6.18.33-1-lts`
-
 ---
 
-## 16. Systemd-boot
-
-```bash
-bootctl --path=/boot install
+## 16. systemd-boot
 ```
-
-Edit `/boot/loader/entries/booster.conf`:
-
-```bash
+bootctl --path=/boot install
 nvim /boot/loader/entries/booster.conf
 ```
-
 ```
 title    arch with booster
 linux    /vmlinuz-linux-lts
@@ -352,52 +281,33 @@ initrd   /intel-ucode.img
 initrd   /booster-linux-lts-new.img
 options  root=/dev/proc/root rw
 ```
-
-> Kalau pakai AMD ganti `intel-ucode.img` jadi `amd-ucode.img`
-
-Edit `/boot/loader/loader.conf`:
-
-```bash
+amd ganti `intel-ucode.img` → `amd-ucode.img`
+```
 nvim /boot/loader/loader.conf
 ```
-
 ```
-#timeout 3
-#console-mode keep
 default  booster.conf
 ```
-
-```bash
+```
 bootctl --graceful update
 ```
 
 ---
 
-## 17. Install Desktop
-
-```bash
+## 17. desktop
+```
 pacman -S xfce4 sddm pipewire pipewire-pulse pipewire-jack pipewire-alsa xorg-server xorg-xauth xf86-video-vesa xf86-video-fbdev xfce4-screensaver xfce4-power-manager
 systemctl enable sddm
 systemctl enable NetworkManager
-```
-
-Tambahkan user ke group yang diperlukan:
-
-> Ganti `(username)` dengan username kalian
-
-```bash
-usermod -aG video,input,tty (username)
+usermod -aG video,input,tty [username]
 echo "needs_root_rights = yes" > /etc/X11/Xwrapper.config
 ```
 
 ---
 
-## 18. Selesai
-
-```bash
+## 18. done
+```
 exit
 umount -R /mnt
 reboot
 ```
-
----
