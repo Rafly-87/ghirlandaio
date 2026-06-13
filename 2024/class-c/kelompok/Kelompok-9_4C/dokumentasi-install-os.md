@@ -40,8 +40,11 @@ system = 50G [linux filesystem]
 cryptsetup luksFormat --sector-size 4096 /dev/partisi
 ```
 ```
-cryptsetup luksOpen /dev/partisi [creamy]
+cryptsetup luksOpen /dev/kondisi [creamy]
 ```
+> kondisi: nvme0n1psekian
+> kondisi: sdasekian
+> kondisi:sdbsekian
 ```
 pvcreate /dev/mapper/[creamy]
 ```
