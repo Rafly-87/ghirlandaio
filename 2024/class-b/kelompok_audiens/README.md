@@ -35,16 +35,16 @@ KELOMPOK 9
 2. Ananda Dwi Aryani
 
 KELOMPOK 10
-1. Ira Khairina
-2. Zihan Nuraeni
+1. Rihadatul Aisy Avicena Anwar
+2. Hana Zada Videla
 
 KELOMPOK.11
 1. Nicky Puji Rahayu
 2. Kayla Shita Sabila
 
 KELOMPOK 12
-1. Rihadatul Aisy Avicena Anwar
-2. Hana Zada Videla
+1. Ira Khairina
+2. Zihan Nuraeni
 
 KELOMPOK 13
 1. Naila Nur Luna
