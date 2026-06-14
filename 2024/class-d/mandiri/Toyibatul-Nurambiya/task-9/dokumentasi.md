@@ -80,7 +80,7 @@
 ### 26. Konfigurasi Kernel Command Line
 ```mkdir /etc/cmdline.d```
 ```touch /etc/cmdline.d/{01-boot.conf,02-misc.conf}```
-```echo "rd.luks.name=$(blkid -s UUID -o value /dev/nvme0n1p5)=angela root=/dev/system/root" > /etc/cmdline.d/01-boot.conf```
+```echo "rd.luks.name=$(blkid -s UUID -o value /dev/sda5)=miya root=/dev/system/root" > /etc/cmdline.d/01-boot.conf```
 ```cat  /etc/cmdline.d/01-boot.conf```
 ### 27. Konfigurasi mkinitcpio
 ```nvim /etc/mkinitcpio.conf```
