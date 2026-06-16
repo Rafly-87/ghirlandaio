@@ -131,7 +131,7 @@ mount --mkdir -o rw,nosuid,noexec,relatime /dev/namagrup/podman /mnt/var/lib/con
 ## Periksa kembali
 
 ```
-31. lsblk
+lsblk
 ```
 
 ## Install package yang dibutuhkan
@@ -267,7 +267,7 @@ systemctl enable systemd-resolved 
 systemctl enable iwd 
 ```
 
-57. Penyesuaian terakhir
+## Penyesuaian terakhir
 
 ```
 exit
@@ -279,3 +279,11 @@ umount -R /mnt
 **CTRL+D**
 
 **asciineme upload nama_file.cast**
+**setelah itu, foto link yang tampil**
+
+## Selesai
+
+
+```
+reboot
+```
