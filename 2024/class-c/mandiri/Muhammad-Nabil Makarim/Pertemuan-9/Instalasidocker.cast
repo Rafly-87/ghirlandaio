@@ -433,7 +433,7 @@
 [0.369, "o", "t"]
 [1.040, "o", "\r\n\u001b[?2004l\r"]
 [0.593, "o", "Swarm initialized: current node (2nwc5c8ujbpvu1h0bofti4pqt) is now a manager.\r\n\r\n"]
-[0.004, "o", "To add a worker to this swarm, run the following command:\r\n\r\n    docker swarm join --token SWMTKN-1-1kc70xomofazj70eu3ugi3zseqluwzjmw6e4a5k7ff2tuicaz2-9wg814jlei1fkouc8vol31dbs 10.69.245.101:2377\r\n\r\nTo add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.\r\n"]
+[0.004, "o", "To add a worker to this swarm, run the following command:\r\n\r\n    docker swarm join --token 10.69.245.101:2377\r\n\r\nTo add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.\r\n"]
 [0.002, "o", "\u001b]0;root@nabil:/home/nabil\u0007"]
 [0.000, "o", "\u001b[?2004h[root@nabil nabil]# "]
 [13.727, "o", "d"]
