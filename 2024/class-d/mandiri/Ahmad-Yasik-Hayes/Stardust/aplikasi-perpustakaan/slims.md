@@ -103,3 +103,5 @@ sudo firewall-cmd --reload
 ```
 
 Slims
+## cp
+
