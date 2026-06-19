@@ -76,3 +76,69 @@ lvcreate -L 15GB system -n home
 ```
 lvcreate -l100%FREE system -n podman
 ```
+### Format Filesystem
+```
+mkfs.vfat -F32 -n BOOT /dev/nvme0n1p6
+```
+```
+mkfs.ext4 /dev/system/root
+```
+```
+mkfs.ext4 /dev/system/vars
+```
+```
+mkfs.ext4 /dev/system/vlog
+```
+```
+mkfs.ext4 /dev/system/vtmp
+```
+```
+mkfs.ext4 /dev/system/vaud
+```
+```
+mkfs.ext4 /dev/system/home
+```
+```
+mkfs.ext4 /dev/system/podman
+```
+### Mount
+```
+mount /dev/system/root /mnt
+```
+```
+mount --mkdir -o uid=0,gid=0,fmask=0077,dmask=0077 /dev/nvme0n1p6 /mnt/boot
+```
+```
+mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/system/vars /mnt/var
+```
+```
+mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/system/vlog /mnt/log
+```
+```
+mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/system/vtmp /mnt/tmp
+```
+```
+mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/system/vaud /mnt/var/log/audit
+```
+```
+mount --mkdir -o rw,nodev,nosuid,relatime /dev/system/home /mnt/home
+```
+```
+mount --mkdir -o rw,nodev,nosuid,relatime /dev/system/podman /mnt/var/lib/containers
+```
+### Pacstrap
+```
+pacstrap /mnt base amd-ucode linux-lts linux-lts-headers linux-firmware mkinitcpio lvm2 sudo curl neovim iwd firewalld pacman podman podman-compose
+```
+### Membuat fstab
+```
+genfstab -U /mnt > /mnt/etc/fstab
+```
+### Copy Konfigurasi Network
+```
+cp /etc/systemd/network/* /mnt/etc/systemd/network
+```
+### Menambah tmpfs
+```
+echo "tmpfs /tmp tmpfs defaults, nosuid,noexec,size=1G 0 0" >> /mnt/etc/fstab
+```
