@@ -31,7 +31,7 @@ mount /dev/[nama grup]/root /mnt
 
 ### Partisi Boot (EFI/FAT32)
 ```
-mkfs.ext4 /dev/[partisi boot]
+mkfs.vfat -F32 /dev/[partisi boot]
 ```
 
 ```
