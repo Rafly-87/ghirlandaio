@@ -1,5 +1,5 @@
 # Slims
-## Melihat IP adress 
+## Melihat IP address 
 ```
 ip a
 ```
@@ -63,11 +63,12 @@ cd docker-compose-for-slims-master/
 ```
 ls
 ```
-## konfigurasi kerne;
+## konfigurasi kernel
 ```
 sudo nvim /etc/sysctl.d/99-custom.conf
 ```
 >Masukkan password
+
 >Insert
 ```
 net.ipv4.ip_unpriviliged_port_start=80
