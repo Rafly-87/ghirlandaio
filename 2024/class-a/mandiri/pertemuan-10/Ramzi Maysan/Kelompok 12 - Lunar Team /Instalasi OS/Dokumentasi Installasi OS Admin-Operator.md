@@ -1,4 +1,4 @@
-# Dokumentasi Installasi OS Admin
+# Dokumentasi Installasi OS Admin-Operator
 
 
 ### Konfigurasi Koneksi Jaringan:
