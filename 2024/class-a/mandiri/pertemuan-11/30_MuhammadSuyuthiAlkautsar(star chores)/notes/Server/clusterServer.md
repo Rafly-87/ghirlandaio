@@ -15,8 +15,15 @@ Dalam sebuah cluster, terdapat controller (seperti load balancer) yang bertugas 
 # Pentingnya Klastering
 Penggunaan cluster sangat penting agar layanan publik atau situs web tetap stabil saat menerima banyak request sekaligus
 
+# Referensi
+
+
 https://www.youtube.com/watch?v=bwHpD_vOd6A
 
 https://ibertronica.es/blog/en/products/how-to-create-a-server-cluster-for-high-performance-projects/
 
 https://www.ibm.com/docs/en/was-nd/8.5.5?topic=servers-introduction-clusters
+
+
+https://novoserve.com/blog/what-is-a-server-cluster-server-clustering-on-dedicated-servers
+
