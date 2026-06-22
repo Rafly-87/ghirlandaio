@@ -23,9 +23,9 @@ nvim /etc/mkinitcpio.d/linux-lts.preset
 nvim /etc/mkinitcpio.d/linux-hardened.preset
 ```
 > hapus semua # dan ditambahkan seperti ini:
-> ALL_config="/etc/mkinitcpio.conf"
-> ALL_kver="/boot/vmlinuz-linux-hardened"
-> ALL_kerneldest="/boot/kernel/vmlimuz-linux-hardened"
+- ALL_config="/etc/mkinitcpio.conf"
+- ALL_kver="/boot/vmlinuz-linux-hardened"
+- ALL_kerneldest="/boot/kernel/vmlimuz-linux-hardened"
 
 - BAGIAN ENIH GANTI #default_image="/boot/initramfs-linux-hardened.img"
 - MENJADI default_uki="/boot/efi/Linux/arch-linux-hardened.efi"
