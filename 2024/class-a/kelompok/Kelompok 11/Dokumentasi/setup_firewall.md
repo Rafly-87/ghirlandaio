@@ -5,6 +5,7 @@
 systemctl enable firewalld
 systemctl status firewalld
 ```
+
 ---
 
 ## 2. Memeriksa Zone Drop
