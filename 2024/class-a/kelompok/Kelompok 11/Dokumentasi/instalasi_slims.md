@@ -1,5 +1,11 @@
 # Instalasi Slims
 
+## Rekam 
+
+```bash
+asciinema record namafile.cast
+```
+
 ## Cek kernel aktif
 
 ```bash
@@ -151,3 +157,9 @@ Contoh link yang digunakan untuk buka di browser
 http://10.141.210.194:8881
 
 
+## Upload Rekaman
+
+ctrl + d untuk mengakhiri rekaman
+
+```bash
+asciinema upload namafile.cast
