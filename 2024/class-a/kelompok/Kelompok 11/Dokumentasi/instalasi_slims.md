@@ -1,7 +1,6 @@
 # Instalasi Slims
 
-
-## . Cek kernel aktif
+## Cek kernel aktif
 
 ```bash
 uname -r
@@ -15,7 +14,8 @@ Karena yang digunakan adalah hardened maka yang muncul harus:
 
 ---
 
-## . Sambungkan internet
+
+## Sambungkan internet
 
 ```bash
 iwctl
@@ -51,6 +51,7 @@ Jika belum terinstall silahkan install dulu (Cek pada bagian install podman)
 
 ---
 
+
 ## . Download slims
 
 ```bash
@@ -63,3 +64,90 @@ Kemudian Ekstrak file yang sudah diunduh
 ```bash
 unzip master.zip
 ```
+
+Untuk melihat daftar file
+
+```bash
+ls -lh
+```
+
+## Cek IP Address
+
+```bash
+ip addr
+```
+
+Untuk tes koneksi ke laptop database gunakan
+
+```bash
+ping -c 5 (ip addr laptop database)
+```
+
+Pastikan laptop data juga terhubung ke jaringan yang sama
+
+---
+
+
+```bash
+cd slims9_bulian-master
+```
+
+Cek Isi Direktori
+
+```bash
+ls -lh
+```
+
+```bash
+cp .env.example.env
+```
+
+```bash
+cat .env
+```
+
+Pastikan Nilai HTTP_PORT dan DB_PORT sudah benar
+
+Masuk ke pengeditan
+
+```bash
+nano docker-compose.yml
+```
+
+Edit pada bagian DB menjadi:
+
+```bash
+DB_HOST= (IP ADDRESS Laptop Database)
+DB_PORT= 3306
+DB_USER= nama
+DB_PASS= password
+DB_NAME= senayan
+```
+
+```bash
+podman compose up -d
+```
+
+## Cek status
+
+```bash
+podman ps
+```
+
+Cek juga port yang ada, dibagian port sebelah status
+
+Contoh
+
+```bash
+0.0.0.0:8881->80/tcp
+```
+
+Port itu yang akan dipakai untuk login menggunakan browser
+
+http://IP Address laptop app:PORT
+
+Contoh link yang digunakan untuk buka di browser
+
+http://10.141.210.194:8881
+
+
