@@ -32,7 +32,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - ENV=production
+      - ENV=development
       - DB_HOST=db
       - DB_PORT=3306
       - DB_USER=${DB_USER}
@@ -91,3 +91,16 @@ docker compose up -d --build
 Tes dari server
 
 curl -I http://localhost:8881
+
+```
+sudo docker compose down -v
+```
+```
+sudo docker compose up -d --build
+```
+```
+sudo docker exec -u root slims sh -lc 'chown -R www-data:www-data /var/www/html/config && chmod -R 775 /var/www/html/config'
+```
+```
+sudo docker composer restart
+```

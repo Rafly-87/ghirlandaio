@@ -1,4 +1,4 @@
-# CONNECT WIFI
+# CONNECT WIFI di sesuaikan
 
 ```bash
 iwctl
