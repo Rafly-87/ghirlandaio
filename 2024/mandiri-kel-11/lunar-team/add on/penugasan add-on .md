@@ -18,15 +18,15 @@
  
  **1. Keterbatasan Kompetensi Sumber Daya Manusia (SDM) di Bidang Teknologi Informasi** 
  
-Salah satu permasalahan yang paling sering ditemukan adalah masih terbatasnya kemampuan pustakawan, pegawai arsip, maupun pengguna dalam memanfaatkan teknologi informasi secara optimal. Beberapa penelitian menunjukkan bahwa kurangnya pelatihan, literasi digital, dan penguasaan teknologi menjadi hambatan dalam penggunaan sistem otomasi, e-book, e-journal, RFID, repository, maupun aplikasi kearsipan digital.
+Masih terdapat pustakawan, pegawai arsip, maupun pengguna yang belum memiliki kemampuan teknologi informasi yang memadai. Kurangnya literasi digital, pelatihan, dan pendampingan menyebabkan berbagai sistem informasi yang telah diterapkan belum dapat dimanfaatkan secara optimal. Permasalahan ini terlihat pada penggunaan sistem otomasi perpustakaan, e-book, e-journal, RFID, repository institusi, serta aplikasi kearsipan digital.
 
 **2. Keterbatasan Infrastruktur dan Dukungan Teknis**
 
-Implementasi teknologi informasi masih menghadapi berbagai kendala teknis, seperti perangkat keras dan perangkat lunak yang belum memadai, gangguan sistem, keterbatasan akses internet, serta minimnya tenaga ahli teknologi informasi. Kondisi ini menyebabkan layanan digital belum dapat berjalan secara maksimal dan berkelanjutan.
+Implementasi teknologi informasi masih menghadapi berbagai kendala teknis, seperti keterbatasan perangkat keras dan perangkat lunak, koneksi internet yang kurang memadai, gangguan sistem, serta minimnya tenaga ahli teknologi informasi. Kondisi tersebut menghambat operasional layanan digital dan mengurangi efektivitas pemanfaatan teknologi dalam mendukung kegiatan perpustakaan dan kearsipan.
 
 **3. Belum Optimalnya Pengembangan dan Pemanfaatan Sistem Digital**
 
-Meskipun sebagian besar perpustakaan dan lembaga arsip telah menerapkan berbagai teknologi informasi, pemanfaatannya masih belum optimal. Hal ini terlihat dari belum terintegrasinya sistem antarunit, keterbatasan fitur pada aplikasi dan website, serta kurangnya inovasi dan pengembangan layanan digital yang sesuai dengan kebutuhan pengguna. Akibatnya, manfaat teknologi informasi dalam mendukung layanan informasi dan pengelolaan arsip belum dapat dirasakan secara maksimal.
+Meskipun berbagai teknologi informasi telah diterapkan, pemanfaatannya masih belum optimal. Beberapa permasalahan yang ditemukan antara lain belum terintegrasinya sistem antarunit, keterbatasan fitur pada aplikasi dan website, kurangnya pembaruan sistem secara berkala, serta belum maksimalnya pemanfaatan layanan digital oleh pengguna. Akibatnya, teknologi informasi belum sepenuhnya mampu mendukung layanan informasi dan pengelolaan arsip secara efektif.
 
 ### Sumber:
 http://repository.uinjkt.ac.id/dspace/handle/123456789/427
