@@ -130,7 +130,7 @@ Digunakan untuk membuat atau mengubah konfigurasi jaringan agar menggunakan IP s
 
 ```
 [Match]
-Name=enp0s3
+Type=ether
 
 [Network]
 Address=23.23.2.3/24
