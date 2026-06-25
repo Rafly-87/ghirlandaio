@@ -190,6 +190,45 @@ Cari hooks yang tidak ada tagarnya lalu tambahkan `sd-encrypt lvm2`. Sehingga me
 ```bash
 HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-encrypt lvm2 sd-vconsole block filesystems fsck) 
 ```
+prepare boot
+etc/mkinitcpio.d/linux-lts.preset
+
+Install bootloader
+
+systemd-boot adalah bootloader ringan yang sudah built-in di systemd:
+ ```bash
+bootctl --path=/boot install
+```
+Enable services
+
+manajemen jaringan
+```bash
+systemctl enable systemd-networkd 
+```  
+manajemen DNS
+```bash
+systemctl enable systemd-resolved 
+```
+
+WiFi daemon
+```bash
+systemctl enable iwd       
+```
+         
+firewall
+```bash
+systemctl enable firewalld         
+```
+
+Selesai Instalasi OS
+
+```bash
+exit
+umount -R /mnt
+```
+
+umount -R unmount secara rekursif semua partisi yang ter-mount di bawah /mnt. Setelah ini sistem siap direboot.
+
 
 DISABLE KERNEL UNTUK SEMUA (KECUALI CLIENT KARENA MEREKA BEBAS)
 
