@@ -53,6 +53,24 @@ sudo nvim /etc/modprobe.d/01-custom.conf
 > Disable bluetooth dan USB
 <img width="2304" height="1440" alt="Screenshot_20260626_010245_Samsung Browser" src="https://github.com/user-attachments/assets/1179cca0-b155-4b00-b736-b24de81ed4b9" />
 
+```
+mkinitcpio -P
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
