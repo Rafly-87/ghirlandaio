@@ -17,3 +17,12 @@ Kualitas SDM menjadi faktor paling mendasar dalam implementasi teknologi informa
 Implementasi teknologi informasi membutuhkan dukungan perangkat keras, jaringan, server, media penyimpanan, dan fasilitas teknologi lainnya. Keterbatasan infrastruktur menyebabkan berbagai layanan berbasis teknologi tidak dapat berjalan secara maksimal atau bahkan tidak dapat diterapkan sama sekali.
 3. Keterbatasan Pengembangan Sistem Otomasi Perpustakaan
 Banyak perpustakaan telah menggunakan sistem otomasi, namun pengembangannya masih belum optimal. Sistem yang belum terintegrasi, fitur yang belum dimanfaatkan secara maksimal, serta kurangnya pembaruan sistem menjadi hambatan utama dalam mewujudkan layanan perpustakaan yang efektif dan berbasis teknologi.
+
+## Sumber
+
+1. Pengaruh Task Technology Fit terhadap Pemanfaatan E-book Mahasiswa Ilmu Perpustakaan UIN Jakarta (https://repository.uinjkt.ac.id/dspace/handle/123456789/78603) 
+2. Efektivitas Penerapan Sistem Library Automation Project (LAP) pada Perpustakaan Pengguna (http://repository.uinjkt.ac.id/dspace/handle/123456789/2035)
+3. Pelestarian Koleksi Digital di Perpustakaan Universitas Terbuka (https://repository.uinjkt.ac.id/dspace/handle/123456789/68170)
+4. Penerapan Otomasi Perpustakaan Berbasis Teknologi Senayan Library Information Management System (SLIMS) di UPT  Perpustakaan Universitas Pembangunan Nasional Veteran Jakarta (https://repository.uinjkt.ac.id/dspace/handle/123456789/71674)
+5. Analisis Strategi dan Kualitas Terjemahan Gemini AI pada Rubrik Tufan Al Aqsa di Situs Berita Al Jazeera.Net (https://repository.uinjkt.ac.id/dspace/handle/123456789/82133)
+6. Pemanfaatan Teknologi RFID (Radio Frequency Identification) di Suku Dinas Perpustakaan dan Arsip Kota Administrasi Jakarta Barat (https://repository.uinjkt.ac.id/dspace/handle/123456789/64565)
