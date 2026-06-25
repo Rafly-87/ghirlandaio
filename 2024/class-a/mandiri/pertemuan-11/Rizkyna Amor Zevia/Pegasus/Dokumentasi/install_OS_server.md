@@ -326,7 +326,7 @@ nvim /etc/mkinitcpio.conf
 nvim /etc/mkinitcpio.d/linux-lts.conf.preset
 ```
 
-
+```
 = mkinitcpio preset file for the 'linux-hardened' package
 ALL_config="/etc/mkinitepio.conf"
 ALL_kver="/boot/vmlinuz-linux-hardened"
@@ -344,7 +344,7 @@ PRESETS=( 'default')
 #fallback_image="/boot/initramfs-linux-lts-fallback.img “
 #fallback_uki=”/efi/EFI/Linux/arch-linux-lts-fallback.efi"
 #fallback_options="-S autodetect”
-
+```
 
 ## Menginstall bootctl
 
