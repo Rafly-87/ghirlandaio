@@ -235,15 +235,15 @@ nvim /etc/locale.gen
 hapus hastag pada:
 
 ```
-  #en_US.UTF-8 UTF-8
-	#en_US ISO-8859-1
+#en_US.UTF-8 UTF-8
+#en_US ISO-8859-1
 ```
 
 agar jadi:
 
 ```
-  en_US.UTF-8 UTF-8
-	en_US ISO-8859-1
+en_US.UTF-8 UTF-8
+en_US ISO-8859-1
 ```
 
 ```
@@ -320,10 +320,12 @@ echo rw > /etc/cmdline.d/02-misc.conf
 nvim /etc/mkinitcpio.conf
 ```
 
-## Edit bagian HOOKS terakhir (yang tidak ada # di depannya), tambahin (sd-encrypt lvm2)
+Edit bagian HOOKS terakhir (yang tidak ada # di depannya), tambahin (sd-encrypt lvm2)
+
+Edit bagian
 
 ```
-nvim /etc/mkinitcpio.d/linux-lts.conf.preset
+nvim /etc/mkinitcpio.d/linux-hardened.conf.preset
 ```
 
 ```
@@ -337,12 +339,12 @@ PRESETS=( 'default')
 #PRESETS=('default' ‘fallback')
 
 #default_config="/etc/mkinitcpio.conf”
-#default_image="/boot/initramfs-linux-lts.img”
- default_uki="/boot/EFI/Linux/arch-linux-lts.efi"
+#default_image="/boot/initramfs-linux-hardened.img”
+ default_uki="/boot/EFI/Linux/arch-linux-hardened.efi"
 #default_options="--splash /us/share/systend/bootctl/splash-arch.bmp”
 #fallback_config=”/etc/mkinitcpio.conf”
-#fallback_image="/boot/initramfs-linux-lts-fallback.img “
-#fallback_uki=”/efi/EFI/Linux/arch-linux-lts-fallback.efi"
+#fallback_image="/boot/initramfs-linux-hardened-fallback.img “
+#fallback_uki=”/efi/EFI/Linux/arch-linux-hardened-fallback.efi"
 #fallback_options="-S autodetect”
 ```
 
