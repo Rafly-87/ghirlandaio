@@ -14,12 +14,12 @@ Gateway= [samakan dengab ip address diatas, bagian belakang di ganti dengan angk
 
 <img width="445" height="217" alt="image" src="https://github.com/user-attachments/assets/b8f92a76-3ff2-4f69-b68f-5590de1d9e4d" />
 
-# setelah itu kita restart networknya
+# setelah itu kita restart network-nya
 ```
 sudo systemctl restart systemd-networkd
 ```
 
-# lalu cek apakah sudah ke gabti apa tidak
+# lalu cek apakah sudah ke ganti apa tidak
 ```
 ip a
 ```
