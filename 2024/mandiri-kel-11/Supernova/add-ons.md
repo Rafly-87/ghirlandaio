@@ -1,4 +1,4 @@
-## Tabel Skripsi Teknologi Informasi Tahun (1999-Sekarang)
+## Tabel kumpulan skripsi dengan topik Teknologi Informasi dari tahun (1999-sekarang)
 | No. | Judul | Penulis | Tahun | Kesimpulan & Saran |
 |-----|--------|---------|--------|-------------------|
 | 1. | Analisis Penerapan Program Aplikasi NCI Bookman Ver. 3.10 pada Perpustakaan PT. Bank "X" (Persero) Tbk. |  Abdul Khoir | 2005 | Program aplikasi NCI Bookman Ver. 3.10 yang diterapkan pada Perpustakaan PT. Bank "X" (Persero) Tbk. mampu menangani sebagian besar kegiatan rutin perpustakaan secara terintegrasi melalui menu Manajemen User, Koleksi, Aktivitas, dan Laporan. Program ini memudahkan pengelolaan perpustakaan serta telah memenuhi standar metadata katalog perpustakaan berdasarkan Dublin Core dan Indomarc. Selain itu, sistem memiliki antarmuka yang mudah digunakan, fitur keamanan akses, serta mendukung penggunaan jaringan LAN untuk operasional multi-user. Namun, pengembangan sistem otomasi tetap diperlukan agar dapat mengikuti perkembangan teknologi informasi dan meningkatkan kualitas layanan perpustakaan.
@@ -22,4 +22,14 @@
 8. Permasalahan utama dalam implementasi E-Arsip terletak pada aspek akses informasi dan integrasi sistem yang belum sepenuhnya memenuhi standar sistem manajemen rekod. Selain itu, terdapat kendala berupa jaringan internet yang kurang optimal, proses migrasi data yang lambat, keterbatasan kapasitas penyimpanan hasil digitalisasi, tidak tersedianya akun pengguna khusus bagi petugas depo, serta belum adanya fitur komunikasi antar pengguna dalam sistem.
 9. Penelitian ini menunjukkan bahwa teknologi digital mampu meningkatkan kualitas layanan perpustakaan. Namun, berbagai permasalahan masih dihadapi, seperti keterbatasan akses terhadap teknologi, keamanan informasi pengguna yang belum optimal, kualitas jaringan internet yang belum memadai, serta berbagai gangguan teknis pada sistem digital. Oleh karena itu, diperlukan penguatan infrastruktur teknologi, peningkatan keamanan data, dan pengembangan literasi digital bagi pustakawan maupun pemustaka untuk mendukung layanan perpustakaan digital yang lebih efektif.
 
-##
+## 3 permasalahan utama perpustakaan dan arsip dalam implementasi teknologi informasi
+**1. Keterbatasan Infrastruktur dan Sistem Teknologi Informas**
+Banyak perpustakaan dan lembaga arsip masih menghadapi kendala jaringan internet, perangkat keras, kapasitas penyimpanan, migrasi data, serta sistem yang belum terintegrasi. Akibatnya, layanan informasi dan pengelolaan data belum berjalan optimal.
+**2. Keterbatasan Kompetensi dan Dukungan SDM Teknologi Informasi** 
+Implementasi teknologi informasi membutuhkan pustakawan dan arsiparis yang memiliki kompetensi TI. Namun, masih ditemukan kurangnya tenaga yang memiliki keahlian khusus di bidang otomasi, digitalisasi, maupun pengelolaan sistem informasi sehingga pemanfaatan teknologi belum maksimal.
+**3. Kualitas Data dan Efektivitas Sistem Temu Kembali Informasi**
+Masalah yang sering muncul adalah ketidaksesuaian data dalam sistem dengan kondisi koleksi atau arsip yang sebenarnya, data hasil migrasi yang belum diperbarui, serta fitur pencarian yang kurang efektif. Hal ini menyebabkan pengguna kesulitan menemukan informasi secara akurat dan cepat.
+
+http://repository.uinjkt.ac.id/dspace/handle/123456789/408
+http://repository.uinjkt.ac.id/dspace/handle/123456789/18917
+http://repository.uinjkt.ac.id/dspace/handle/123456789/9735
