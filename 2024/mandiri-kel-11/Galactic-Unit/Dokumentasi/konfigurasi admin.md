@@ -10,5 +10,5 @@ isi ip a server 2:
 
 Lalu masuk ke browser 
 ```
-http://slims.tes
+http://slims.test
 ```
