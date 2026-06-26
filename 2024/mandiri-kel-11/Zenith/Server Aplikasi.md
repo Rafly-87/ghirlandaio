@@ -155,7 +155,7 @@ sudo sysctl --system
 Buka konfigurasi penyimpanan Podman.
 
 ```bash
-nvim ~/.config/containers/storage.conf
+nvim /.config/containers/storage.conf
 ```
 
 ---
