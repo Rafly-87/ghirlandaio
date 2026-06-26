@@ -1,4 +1,4 @@
-# Skripsi dengan topik teknologi dari tahun 199-2026 di Perpustakaan Fakultas Adab dan Humaniora
+# Skripsi dengan topik teknologi dari tahun 1999-2026 di Perpustakaan Fakultas Adab dan Humaniora
 
 | No  | Judul      | Penulis     | Tahun | Kesimpulan dan Saran     |
 |-----|-------------|-------------|-------|---------------------------|
