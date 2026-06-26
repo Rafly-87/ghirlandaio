@@ -14,6 +14,7 @@
 [Match]
 Type=ether
 Kind=!*
+Name=(nama jaringan lan)
 
 [Link]
 RequiredForOnline=routable
@@ -30,6 +31,8 @@ RouteMetric=100
 [IPv6AcceptRA]
 ```
 
+> [!NOTE]
+> contohnya: 'eno1' atau 'enp0s25'. Intinya yang didepannya ada en. Cara cek nya yaitu 'ip a'
 ## Terapkan Konfigurasi
 
 ```
