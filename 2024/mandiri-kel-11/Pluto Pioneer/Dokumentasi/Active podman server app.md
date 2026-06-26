@@ -81,6 +81,7 @@ sudo podman ps -a
 ```
 sudo systemctl stop firewalld
 ```
+```
 ip a
 ```
 ```
